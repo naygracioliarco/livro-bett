@@ -94,28 +94,79 @@ function TableOfContents() {
         />
 
         {/* Seção Tutorial */}
-        <div className="flex-1 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p
-            className="font-hwtArtz text-sm md:text-xl"
-            style={{
-              color: '#0E3B5D',
-              fontWeight: 700,
-            }}
-          >
-            ACESSE O TUTORIAL E APRENDA A USAR O LIVRO DIGITAL.
-          </p>
-          <a
-            href="https://go.plataformaconx.com.br/ujBmfd"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-pointer self-center md:self-auto"
-          >
-            <img
-              src="images/qrCode.svg"
-              alt="QR Code Tutorial"
-              className="w-20 h-20 md:w-28 md:h-28 object-contain"
-            />
-          </a>
+        <div className="flex-1 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          {/* Texto e botão */}
+          <div className="flex-1 flex flex-col gap-3">
+            <p
+              className="font-ubuntu text-sm md:text-base"
+              style={{
+                color: '#0E3B5D',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              Clique no botão abaixo para acessar o tutorial de uso do livro digital
+            </p>
+            <a
+              href="https://go.plataformaconx.com.br/bYxAg7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex"
+            >
+              <button
+                type="button"
+                style={{
+                  padding: '10px 30px',
+                  backgroundColor: '#BF3154',
+                  boxShadow: '0px 4px 0px #9C2F4B',
+                  borderRadius: '30px',
+                  color: 'white',
+                  fontFamily: 'Ubuntu, sans-serif',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  lineHeight: '1.4em',
+                  textTransform: 'uppercase',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#9C2F4B';
+                  e.currentTarget.style.boxShadow = '0px 2px 0px #7A2440';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#BF3154';
+                  e.currentTarget.style.boxShadow = '0px 4px 0px #9C2F4B';
+                }}
+              >
+                TUTORIAL
+              </button>
+            </a>
+          </div>
+
+          {/* QR Code */}
+          <div className="flex flex-col items-center self-center md:self-auto">
+            <a
+              href="https://go.plataformaconx.com.br/bYxAg7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <img
+                src="images/qrCode.svg"
+                alt="QR Code Tutorial"
+                className="w-20 h-20 md:w-28 md:h-28 object-contain"
+              />
+            </a>
+            <span
+              className="mt-2 text-xs md:text-sm"
+              style={{
+                color: '#0E3B5D',
+                fontSize: '14px',
+              }}
+            >
+              se preferir, leia o QR
+            </span>
+          </div>
         </div>
       </div>
     </nav>
