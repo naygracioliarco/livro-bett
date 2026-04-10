@@ -9,37 +9,39 @@ function Header() {
       {/* Conteúdo do header */}
       <div className="relative z-10">
         <div className="flex items-center gap-3 mb-2">
-          <img
-            src="images/icon.png"
-            alt="Ícone"
-            className="w-24 h-29 object-contain -mt-7"
-          />
           <div className="flex flex-col">
-            <h1
-              className="font-hwtArtz font-bold"
+            <p
+              className="font-inter rounded-[20px]"
               style={{
-                WebkitTextStroke: '1.5px #000000',
-                fontWeight: 800,
+                backgroundColor: '#F4C2FF',
+                color: '#80298F',
+                textAlign: 'center',
+                fontFamily: 'Inter',
+                fontSize: '14px',
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: '30px', /* 428.571% */
+                letterSpacing: '-0.5px',
+                width: '108px',
+                height: '27px',
+              }}
+            >
+              LIVRO DIGITAL
+            </p>
+            <h1
+              className="font-inter font-bold"
+              style={{
+                fontWeight: 900,
                 fontSize: '48px',
               }}
             >
-              PRODUÇÃO DE TEXTOS
+              <span style={{ color: '#FBB733' }}>7.</span> A vida no campo
             </h1>
-            <p
-              className="text-white font-hwtArtz rounded-[20px] px-4 py-2 inline-block w-fit mt-4"
-              style={{
-                backgroundColor: '#9C2F4B',
-                fontWeight: 700,
-                fontSize: '24px',
 
-              }}
-            >
-              6º ANO - VOLUMES 1 E 2
-            </p>
           </div>
         </div>
       </div>
-    </header>
+    </header >
   );
 }
 

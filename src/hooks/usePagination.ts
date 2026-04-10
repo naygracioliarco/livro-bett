@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 /**
  * Hook customizado para gerenciar paginação baseada em scroll
  */
-export function usePagination(defaultPage: number = 4) {
+export function usePagination(defaultPage: number = 3) {
   const [currentPage, setCurrentPage] = useState(defaultPage);
 
   useEffect(() => {

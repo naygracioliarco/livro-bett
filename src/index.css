@@ -1,13 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
 
 
 @font-face {
   font-family: 'hwt-artz", sans-serif';
   src: url('/fonts/HWT-Artz.woff2') format('woff2'),
     url('/fonts/HWT-Artz.woff') format('woff'),
-    url('/fonts/HWT-Artz.ttf') format('truetype');
+    url('/fonts/HWT-Artz.ttf') format('truetype'),
+    url("./assets/fonts/MyriadVF.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -45,7 +48,7 @@
 
 /* Estilo para bullets coloridos nas subquestões */
 ul.question-subitems li::marker {
-  color: #BF3154;
+  color: #80298F;
 }
 
 /* Remove text-justify de todas as células de tabela */

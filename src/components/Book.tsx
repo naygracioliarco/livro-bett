@@ -39,12 +39,12 @@ function Book() {
     <div className="min-h-screen bg-gray-200 w-full">
       <div className="mx-auto bg-white shadow-2xl overflow-hidden w-full md:max-w-[63%]" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
         <Header />
-
+        {/* Paginação */}
+        <Pagination currentPage={currentPage} />
         <div className="p-8 md:p-12">
           {/* Conteúdo do sumário */}
           <TableOfContents />
-          {/* Paginação */}
-          <Pagination currentPage={currentPage} />
+
           {/* Conteúdo do botão do professor */}
           <div className="my-6">
             <TeacherButton
@@ -2318,7 +2318,7 @@ function Book() {
         <Footer />
       </div>
 
-      {currentPage > 4 && (
+      {currentPage > 3 && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-16 right-4 z-40 p-3 hover:scale-110 transition-all"
