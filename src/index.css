@@ -1,57 +1,131 @@
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local('Filson Soft Bold'),
+    local('Filson Soft'),
+    url('/fonts/filson-soft-bold.woff2') format('woff2'),
+    url('/fonts/filson-soft-bold.woff') format('woff');
+}
+
+.chapter-heading {
+  font-family: 'Filson Soft', 'Filson Pro', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #000;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
 
 
 @font-face {
-  font-family: 'hwt-artz", sans-serif';
-  src: url('/fonts/HWT-Artz.woff2') format('woff2'),
-    url('/fonts/HWT-Artz.woff') format('woff'),
-    url('/fonts/HWT-Artz.ttf') format('truetype'),
-    url("./assets/fonts/MyriadVF.woff2") format("woff2");
-  font-weight: 700;
+
+  font-family: 'Myriad VF';
+
+  src: local('Myriad VF'), local('Myriad Variable Concept'), local('Myriad Pro');
+
+  font-weight: 100 900;
+
   font-style: normal;
+
   font-display: swap;
+
 }
+
+
 
 .chapter-content h3 {
-  color: #BF3154;
-  font-family: 'hwt-artz', sans-serif;
+
+  color: #80298F;
+
+  font-family: 'Myriad VF', sans-serif;
+
   font-size: 26px;
+
   font-style: normal;
+
   font-weight: 700;
+
   line-height: normal;
+
 }
+
+
 
 .chapter-content h4 {
-  color: #00776E;
-  font-family: 'hwt-artz', sans-serif;
+
+  color: #80298F;
+
+  font-family: 'Myriad VF', sans-serif;
+
   font-size: 20px;
+
   font-style: normal;
+
   font-weight: 700;
+
   line-height: normal;
+
   padding: 10px 0;
+
 }
+
+
 
 .chapter-content p,
+
 .chapter-content li,
+
 .texto-corrido p {
+
   color: black;
-  font-family: 'Ubuntu', 'sans-serif';
-  font-size: 16px;
+
+  font-family: 'Myriad VF', sans-serif;
+
+  font-size: 14px;
+  text-align: justify;
+
   font-style: normal;
+
   font-weight: 400;
+
   line-height: 150%;
+
 }
+
+
 
 /* Estilo para bullets coloridos nas subquestões */
+
 ul.question-subitems li::marker {
+
   color: #80298F;
+
 }
 
+
+
 /* Remove text-justify de todas as células de tabela */
+
 td {
+
   text-align: left;
+
 }
+

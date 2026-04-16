@@ -35,7 +35,7 @@ function QuestionTextInput({
         {/* Título principal com número */}
         <p className="mb-4">
           {question.number !== undefined && (
-            <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+            <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
           )}
           <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: question.question }} />
         </p>
@@ -49,7 +49,7 @@ function QuestionTextInput({
             return (
               <div key={subQ.letter} className="mb-4">
                 <p className="mb-2">
-                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+                  <span style={{ color: '#80298F', fontWeight: 'bold' }}>{subQ.letter}) </span>
                   <span style={{ color: 'black' }}>{subQ.question}</span>
                 </p>
                 
@@ -68,12 +68,9 @@ function QuestionTextInput({
                           <textarea
                             value={subItemAnswer}
                             onChange={(e) => onAnswerChange(subItemId, e.target.value)}
-                            placeholder={subItem.placeholder || 'Digite sua resposta aqui...'}
+                            placeholder={subItem.placeholder || 'Digite aqui...'}
                             disabled={showResults}
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[60px] text-black"
-                            style={{
-                              fontFamily: 'inherit',
-                            }}
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[60px] text-black font-myriad-vf"
                           />
                           {showResults && subItem.correctAnswer && (
                             <div className="mt-2 p-2 bg-gray-100 rounded text-sm">
@@ -89,12 +86,9 @@ function QuestionTextInput({
                   <textarea
                     value={subUserAnswer}
                     onChange={(e) => onAnswerChange(subQuestionId, e.target.value)}
-                    placeholder={subQ.placeholder || 'Digite sua resposta aqui...'}
+                    placeholder={subQ.placeholder || 'Digite aqui...'}
                     disabled={showResults}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[80px] text-black"
-                    style={{
-                      fontFamily: 'inherit',
-                    }}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[80px] text-black font-myriad-vf"
                   />
                 )}
                 
@@ -117,19 +111,16 @@ function QuestionTextInput({
     <div className="mb-6 rounded-lg">
       <p className="mb-4">
         {question.number !== undefined && (
-          <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+          <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
         )}
         <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: question.question }} />
       </p>
       <textarea
         value={userAnswer}
         onChange={(e) => onAnswerChange(question.id, e.target.value)}
-        placeholder={question.placeholder || 'Digite sua resposta aqui...'}
+        placeholder={question.placeholder || 'Digite aqui...'}
         disabled={showResults}
-        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[100px] text-black"
-        style={{
-          fontFamily: 'inherit',
-        }}
+        className="h-[31px] w-[765px] max-w-full rounded-[5px] bg-[rgba(221,221,221,0.50)] px-3 pt-1 text-left text-[14px] font-normal leading-normal text-[#BDBDBD] placeholder:text-[#BDBDBD] font-myriad-vf focus:outline-none resize-none"
       />
       {showResults && question.correctAnswer && (
         <div className="mt-3 p-3 bg-gray-100 rounded">

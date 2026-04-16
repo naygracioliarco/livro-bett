@@ -7,7 +7,7 @@ interface CaixaTextoProps {
   columns?: number;
 }
 
-function CaixaTexto({ title, children, backgroundColor, columns }: CaixaTextoProps) {
+function CaixaTexto({ title, children, columns }: CaixaTextoProps) {
   const contentStyle: React.CSSProperties = {
     ...(columns && columns > 1 ? {
       // columnCount: columns,
@@ -19,9 +19,8 @@ function CaixaTexto({ title, children, backgroundColor, columns }: CaixaTextoPro
   return (
     <div
       style={{
-        border: '3px solid #0E3B5D',
         position: "relative",
-        backgroundColor: backgroundColor || 'transparent',
+        backgroundColor: '#FFF8EB',
       }}
       className="p-4 my-4"
     >
@@ -29,7 +28,7 @@ function CaixaTexto({ title, children, backgroundColor, columns }: CaixaTextoPro
         <h4
           style={{
             color: '#BF3154',
-            fontFamily: 'hwt-artz',
+            fontFamily: 'myriad-vf',
             fontSize: '20px',
             fontStyle: 'normal',
             fontWeight: 700,

@@ -1,0 +1,6 @@
+Coloque aqui os ficheiros web da Filson Soft (licença sua), com estes nomes:
+
+  filson-soft-bold.woff2   (obrigatório para melhor compressão)
+  filson-soft-bold.woff     (opcional, fallback para navegadores antigos)
+
+Se os seus ficheiros tiverem outro nome (ex.: FilsonSoft-Bold.woff2), renomeie-os ao copiar para esta pasta ou ajuste os url() em src/index.css no bloco @font-face de "Filson Soft".

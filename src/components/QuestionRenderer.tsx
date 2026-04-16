@@ -6,7 +6,7 @@ import QuestionTextInput from './QuestionTextInput';
 import QuestionTableFill from './QuestionTableFill';
 
 interface QuestionRendererProps {
-  question: Question;
+  question?: Question;
   userAnswers: UserAnswers;
   onAnswerChange: (questionId: string, answer: any) => void;
   showResults?: boolean;
@@ -18,6 +18,10 @@ function QuestionRenderer({
   onAnswerChange,
   showResults = false,
 }: QuestionRendererProps) {
+  if (!question) {
+    return null;
+  }
+
   switch (question.type) {
     case 'multiple-choice':
       return (
@@ -65,7 +69,7 @@ function QuestionRenderer({
           rows={question.rows}
           subQuestions={question.subQuestions}
           userAnswers={userAnswers}
-          onAnswerChange={(questionId, fieldId, answer) => onAnswerChange(fieldId, answer)}
+          onAnswerChange={(_questionId, fieldId, answer) => onAnswerChange(fieldId, answer)}
           showResults={showResults}
         />
       );

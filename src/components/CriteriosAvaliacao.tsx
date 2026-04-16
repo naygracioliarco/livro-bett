@@ -36,7 +36,7 @@ function CriteriosAvaliacao({
           className="w-full border-collapse"
           style={{
             border: '3px solid #0E3B5D',
-            fontFamily: 'hwt-artz, sans-serif',
+            fontFamily: 'myriad-vf, sans-serif',
             minWidth: '100%',
           }}
         >
@@ -95,7 +95,7 @@ function CriteriosAvaliacao({
                       border: '3px solid #0E3B5D',
                       color: '#0E3B5D',
                       backgroundColor: 'white',
-                      fontFamily: 'hwt-artz, sans-serif',
+                      fontFamily: 'myriad-vf, sans-serif',
                       fontSize: '16px',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',

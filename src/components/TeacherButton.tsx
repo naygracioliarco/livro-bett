@@ -27,8 +27,8 @@ function TeacherButton({
                 style={{
                     position: 'relative',
                     padding: '10px 30px 10px 45px',
-                    backgroundColor: '#BF3154',
-                    boxShadow: '0px 4px 0px #9C2F4B',
+                    backgroundColor: '#80298F',
+                    boxShadow: '0px 4px 0px rgb(106, 37, 118)',
                     borderRadius: '0 30px 30px 0',
                     color: 'white',
                     fontFamily: "'Ubuntu', sans-serif",
@@ -45,12 +45,12 @@ function TeacherButton({
                     justifyContent: 'center',
                 }}
                 onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#9C2F4B';
-                    e.currentTarget.style.boxShadow = '0px 2px 0px #7A2440';
+                    e.currentTarget.style.backgroundColor = 'rgb(106, 37, 118)';
+                    e.currentTarget.style.boxShadow = '0px 2px 0px rgb(106, 37, 118)';
                 }}
                 onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#BF3154';
-                    e.currentTarget.style.boxShadow = '0px 4px 0px #9C2F4B';
+                    e.currentTarget.style.backgroundColor = '#80298F';
+                    e.currentTarget.style.boxShadow = '0px 4px 0px rgb(106, 37, 118)';
                 }}
             >
                 <div
@@ -62,12 +62,12 @@ function TeacherButton({
                         width: '45px',
                         height: '45px',
                         borderRadius: '50%',
-                        backgroundColor: '#BF3154',
+                        backgroundColor: '#80298F',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         zIndex: 1,
-                        background: 'transparent url("images/iconTeacher.svg") no-repeat center',
+                        background: 'transparent url("images/iconTeacher.png") no-repeat center',
                         backgroundSize: '100%',
                     }}
                 />
@@ -87,8 +87,8 @@ function TeacherButton({
                             <h3 
                                 className="text-2xl font-bold"
                                 style={{ 
-                                    color: '#BF3154',
-                                    fontFamily: "'hwt-artz', sans-serif",
+                                    color: '#80298F',
+                                    fontFamily: "'myriad-vf', sans-serif",
                                     fontSize: '26px',
                                     lineHeight: 'normal'
                                 }}

@@ -4,8 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'hwtArtz': ['hwt-artz', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        'hwtArtz': ['myriad-vf', 'sans-serif'],
         'ubuntu': ['Ubuntu', 'sans-serif'],
+        'myriad-vf': ['Myriad VF', 'sans-serif'],
+        'filson-soft': ['Filson Soft', 'Filson Pro', 'sans-serif'],
       },
     },
   },
