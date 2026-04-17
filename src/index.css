@@ -6,16 +6,168 @@
 
 @import "tailwindcss";
 
+/*
+  Filson Soft — ficheiros em public/fonts/Filson-Soft-Font/Filson-Soft-Font/
+  WOFF2 primeiro, TTF como fallback.
+*/
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Thin.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Thin-Italic.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Thin-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Light.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Light-Italic.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Light-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Regular.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Regular-Italic.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Regular-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: normal;
+  font-weight: 450;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Book.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: italic;
+  font-weight: 450;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Book-Italic.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Book-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Medium.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Medium-Italic.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Medium-Italic.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'Filson Soft';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
   src:
-    local('Filson Soft Bold'),
-    local('Filson Soft'),
-    url('/fonts/filson-soft-bold.woff2') format('woff2'),
-    url('/fonts/filson-soft-bold.woff') format('woff');
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Bold.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Bold-Italic.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Bold-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Heavy.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Heavy-Italic.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Heavy-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Black.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Filson Soft';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/WOFF2/Filson-Soft-Black-Italic.woff2') format('woff2'),
+    url('/fonts/Filson-Soft-Font/Filson-Soft-Font/TTF/Filson-Soft-Black-Italic.ttf') format('truetype');
 }
 
 .chapter-heading {
@@ -34,18 +186,76 @@
 
 
 
+/*
+  Myriad VF — ficheiros em public/fonts/
+  (Light Condensed + Light Condensed Italic). local() mantém fallback se a família
+  completa estiver instalada no sistema.
+ */
 @font-face {
-
   font-family: 'Myriad VF';
-
-  src: local('Myriad VF'), local('Myriad Variable Concept'), local('Myriad Pro');
-
-  font-weight: 100 900;
-
   font-style: normal;
-
+  font-weight: 300;
   font-display: swap;
+  src:
+    url('/fonts/Myriad VF Light Condensed.ttf') format('truetype'),
+    local('Myriad VF'),
+    local('Myriad Variable Concept'),
+    local('Myriad Pro');
+}
 
+@font-face {
+  font-family: 'Myriad VF';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('/fonts/Myriad VF Light Condensed.ttf') format('truetype'),
+    local('Myriad VF'),
+    local('Myriad Variable Concept'),
+    local('Myriad Pro');
+}
+
+@font-face {
+  font-family: 'Myriad VF';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src:
+    url('/fonts/Myriad VF Light Condensed Italic.ttf') format('truetype'),
+    local('Myriad Pro Italic');
+}
+
+@font-face {
+  font-family: 'Myriad VF';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('/fonts/Myriad VF Light Condensed Italic.ttf') format('truetype'),
+    local('Myriad Pro Italic');
+}
+
+@font-face {
+  font-family: 'Myriad VF';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local('Myriad VF Bold'),
+    local('Myriad Pro Bold'),
+    local('Myriad Pro'),
+    url('/fonts/Myriad VF Light Condensed.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Myriad VF';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local('Myriad Pro Bold Italic'),
+    local('Myriad Pro Italic'),
+    url('/fonts/Myriad VF Light Condensed Italic.ttf') format('truetype');
 }
 
 
@@ -56,7 +266,7 @@
   margin-bottom: 24px;
   color: #000;
 
-  font-family: 'Myriad VF', sans-serif;
+  font-family: 'Filson Soft', 'Filson Pro', sans-serif;
 
   font-size: 26px;
 
@@ -68,7 +278,21 @@
 
 }
 
-
+/* Sobrescreve estilos do h3 genérico (tamanho, cor, borda) */
+.chapter-content h3.atividade-digital-heading {
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 0.75rem;
+  color: #80298f;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-synthesis: none;
+  line-height: normal;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .chapter-content h4 {
 

@@ -448,7 +448,7 @@ function Book() {
                   impulsionou essas expedições e levou as pessoas a se
                   adaptarem a novos desafios. 
                 </p>
-
+                <h3 className="atividade-digital-heading">ATIVIDADE DIGITAL</h3>
                 <div className="my-4 flex justify-center">
                   <GameModal
                     thumbnailSrc="images/thumbODA.png"
