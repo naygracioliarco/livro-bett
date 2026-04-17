@@ -51,9 +51,10 @@ function Book() {
         <Header />
         {/* Paginação */}
         <Pagination currentPage={currentPage} />
+        {/* Conteúdo das imagens da capa */}
+        <Poster />
         <div className="p-8 md:p-12">
-          {/* Conteúdo do sumário */}
-          <Poster />
+          
           {/* Conteúdo do botão do professor */}
           <div className="my-6">
             <TeacherButton

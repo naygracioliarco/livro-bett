@@ -5,7 +5,7 @@ function Poster() {
       style={{
         backgroundImage: "url('images/pattern_branco.png')",
         backgroundRepeat: 'repeat',
-        padding: '0px!important',
+        paddingTop: '0px!important',
         backgroundSize: 'contain',
       }}
     >
