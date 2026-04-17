@@ -3,9 +3,11 @@ import { publicUrl } from '../lib/publicUrl';
 function Header() {
   return (
     <header
-      className="relative text-white py-8 px-8 bg-cover bg-center bg-no-repeat"
+      className="relative w-full min-w-0 bg-[#80298F] bg-no-repeat py-8 px-8 text-white"
       style={{
         backgroundImage: `url('${publicUrl('images/Capa-1.svg')}')`,
+        backgroundSize: '100% auto',
+        backgroundPosition: 'top center',
       }}
     >
       {/* Conteúdo do header */}
