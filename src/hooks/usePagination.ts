@@ -1,5 +1,16 @@
 import { useState, useEffect, useCallback } from 'react';
 
+/** Só barras do miolo (`data-book-page`); a barra do topo não entra — evita virar “4” ao primeiro scroll. */
+const BOOK_PAGE_MARKERS = '[data-book-page]';
+
+/**
+ * Distância do topo da viewport: o marcador da página precisa subir até aqui
+ * para essa página passar a valer (valores menores = troca mais tarde).
+ */
+function getScrollTriggerY(): number {
+  return Math.min(160, Math.max(56, Math.round(window.innerHeight * 0.1)));
+}
+
 /**
  * Hook customizado para gerenciar paginação baseada em scroll
  */
@@ -8,43 +19,26 @@ export function usePagination(defaultPage: number = 3) {
 
   useEffect(() => {
     const updateCurrentPage = () => {
-      const paginationElements = document.querySelectorAll('[data-page]');
+      const markerElements = document.querySelectorAll(BOOK_PAGE_MARKERS);
+      const triggerY = getScrollTriggerY();
+
       let visiblePage = defaultPage;
-      let closestToTop = Infinity;
 
-      paginationElements.forEach((el) => {
+      markerElements.forEach((el) => {
         const rect = el.getBoundingClientRect();
-        const page = parseInt(el.getAttribute('data-page') || String(defaultPage));
-
-        // Verifica se o elemento está visível na viewport
-        if (rect.top >= 0 && rect.top < window.innerHeight && rect.bottom > 0) {
-          if (rect.top < closestToTop) {
-            closestToTop = rect.top;
-            visiblePage = page;
-          }
+        const page = parseInt(el.getAttribute('data-book-page') || String(defaultPage), 10);
+        if (Number.isNaN(page)) return;
+        if (rect.top <= triggerY) {
+          visiblePage = Math.max(visiblePage, page);
         }
       });
-
-      // Se nenhuma página está visível no topo, verifica qual está mais próxima
-      if (closestToTop === Infinity) {
-        paginationElements.forEach((el) => {
-          const rect = el.getBoundingClientRect();
-          const page = parseInt(el.getAttribute('data-page') || String(defaultPage));
-          const distanceFromTop = Math.abs(rect.top);
-
-          if (distanceFromTop < closestToTop) {
-            closestToTop = distanceFromTop;
-            visiblePage = page;
-          }
-        });
-      }
 
       setCurrentPage(visiblePage);
     };
 
     updateCurrentPage();
 
-    window.addEventListener('scroll', updateCurrentPage);
+    window.addEventListener('scroll', updateCurrentPage, { passive: true });
     window.addEventListener('resize', updateCurrentPage);
 
     const observer = new MutationObserver(updateCurrentPage);
@@ -72,4 +66,3 @@ export function usePagination(defaultPage: number = 3) {
     scrollToTop,
   };
 }
-

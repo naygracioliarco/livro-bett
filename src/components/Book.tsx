@@ -42,8 +42,12 @@ function Book() {
   useScrollPosition();
 
   return (
-    <div className="min-h-screen bg-gray-200 w-full">
-      <div className="mx-auto bg-white shadow-2xl overflow-hidden w-full md:max-w-[63%]" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+    <div className="min-h-screen w-full bg-gray-200">
+      {/* Sem overflow-hidden: a bandeira da paginação não pode ser cortada pela borda da coluna */}
+      <div
+        className="mx-auto w-full overflow-visible bg-white shadow-2xl md:max-w-[63%]"
+        style={{ marginLeft: 'auto', marginRight: 'auto' }}
+      >
         <Header />
         {/* Paginação */}
         <Pagination currentPage={currentPage} />
@@ -86,7 +90,7 @@ function Book() {
                     pessoas em tempos passados?</li>
                   <li> Que sinais indicam que se trata de uma atividade de comércio?</li>
                 </ul>
-                <Pagination currentPage={4} />
+                <Pagination currentPage={4} expandToBookColumn />
                 <div className="my-6">
                   <TeacherButton
                     visible={SHOW_TEACHER_BUTTON}
@@ -153,7 +157,7 @@ function Book() {
                   </p>
                   <ContinuaProximaPagina />
                 </CaixaTexto>
-                <Pagination currentPage={5} />
+                <Pagination currentPage={5} expandToBookColumn />
                 <CaixaTexto>
                   <p className="mb-4 indent-6">
                     As pessoas viviam, em geral, daquilo que conseguiam produzir para
@@ -211,7 +215,7 @@ function Book() {
                     metropolitana de Belém.
                   </p>
                 </div>
-                <Pagination currentPage={6} />
+                <Pagination currentPage={6} expandToBookColumn />
                 <h3 style={{ marginBottom: '2.0rem', marginTop: '2.0rem' }}>DA TROCA À MOEDA</h3>
                 <p className="mb-4 indent-6">
                   No escambo, nem sempre era fácil fazer uma troca justa para os envolvidos.
@@ -269,7 +273,7 @@ function Book() {
                   relações entre sociedades distantes.
                 </p>
 
-                <Pagination currentPage={7} />
+                <Pagination currentPage={7} expandToBookColumn />
                 <div className="my-6">
                   <TeacherButton
                     visible={SHOW_TEACHER_BUTTON}
@@ -326,7 +330,7 @@ function Book() {
                   showResults={showTeacherView}
                 />
 
-                <Pagination currentPage={8} />
+                <Pagination currentPage={8} expandToBookColumn />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
@@ -360,7 +364,7 @@ function Book() {
                   </p>
                   <img
                     src="images/page_6_img_70_284.png"
-                    className="h-auto w-full max-w-[320px] sm:max-w-[580px] md:max-w-[680px] lg:max-w-[720px]"
+                    className="h-auto w-full max-w-[360px] sm:max-w-[600px] md:max-w-[680px] lg:max-w-[720px]"
                   />
                   <p className="mt-2 text-[10px] text-slate-600" style={{ fontSize: '10px' }}>
                     Talita Stasiak
@@ -387,7 +391,7 @@ function Book() {
                 </p>
 
 
-                <Pagination currentPage={9} />
+                <Pagination currentPage={9} expandToBookColumn />
                 <p className="mb-4 indent-6">
                   <br />da ciência. Além disso, inovações como a bússola, a pólvora e o papel, que vieram
                   da China, chegaram até a Europa. Essa troca de ideias, costumes e saberes mostra
@@ -459,7 +463,7 @@ function Book() {
                   </GameModal>
                 </div>
 
-                <Pagination currentPage={10} />
+                <Pagination currentPage={10} expandToBookColumn />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
@@ -509,7 +513,7 @@ function Book() {
                   showResults={showTeacherView}
                 />
 
-                <Pagination currentPage={11} />
+                <Pagination currentPage={11} expandToBookColumn />
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
                 <div className="my-6">
                   <TeacherButton
@@ -568,7 +572,7 @@ function Book() {
                   showResults={showTeacherView}
                 />
 
-                <Pagination currentPage={12} />
+                <Pagination currentPage={12} expandToBookColumn />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton

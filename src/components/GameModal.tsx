@@ -46,20 +46,20 @@ function GameModal({
   return (
     <>
       {thumbnailSrc ? (
-        <div className="flex max-w-[min(100%,520px)] flex-col items-center gap-3 text-center">
+        <div className="flex w-full max-w-[320px] flex-col items-center gap-3 text-center sm:max-w-[380px] md:max-w-[480px] lg:max-w-[520px]">
           {introTitle && (
             <p className="font-myriad-vf text-base font-semibold text-black md:text-lg">{introTitle}</p>
           )}
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="group relative w-full max-w-[480px] overflow-hidden rounded-[5px] border-0 p-0 shadow-md ring-2 ring-transparent transition hover:ring-[#80298F] focus:outline-none focus:ring-2 focus:ring-[#80298F] focus:ring-offset-2"
+            className="group relative w-full overflow-hidden rounded-[24px] border-0 p-0 shadow-md ring-2 ring-transparent transition hover:ring-[#80298F] focus:outline-none focus:ring-2 focus:ring-[#80298F] focus:ring-offset-2"
             aria-label={altText}
           >
             <img
               src={thumbnailSrc}
               alt={altText}
-              className="h-auto w-full rounded-[5px] object-contain"
+              className="h-auto w-full max-w-[320px] rounded-[5px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[520px]"
             />
           </button>
           {introHint && (
