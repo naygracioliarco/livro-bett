@@ -86,12 +86,21 @@ function GameModal({
       )}
 
       {isOpen && (
-        <div className="fixed inset-0 z-[60] flex flex-col" role="presentation">
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-5"
+          role="presentation"
+        >
+          <button
+            type="button"
+            className="absolute inset-0 bg-black/55 backdrop-blur-[2px]"
+            aria-label="Fechar atividade (fundo)"
+            onClick={() => setIsOpen(false)}
+          />
           <div
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="relative flex h-[100dvh] min-h-0 w-full flex-col overflow-hidden bg-black"
+            className="relative z-[61] flex h-[75vh] w-[75vw] min-h-0 min-w-0 max-h-[min(90dvh,90svh)] max-w-[min(90vw,75vw)] flex-col overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-white/15"
           >
             <span id={titleId} className="sr-only">
               Atividade interativa
@@ -99,7 +108,7 @@ function GameModal({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute right-[max(12px,env(safe-area-inset-right))] top-[max(12px,env(safe-area-inset-top))] z-[70] flex h-[46px] w-[46px] flex-shrink-0 items-center justify-center rounded-[46px] border-[3px] border-solid border-white bg-[#80298F] shadow-md transition hover:bg-[#6b2178] focus:outline-none focus:ring-2 focus:ring-white/80 focus:ring-offset-2 focus:ring-offset-transparent"
+              className="absolute right-3 top-3 z-[70] flex h-[46px] w-[46px] flex-shrink-0 items-center justify-center rounded-[46px] border-[3px] border-solid border-white bg-[#80298F] shadow-md transition hover:bg-[#6b2178] focus:outline-none focus:ring-2 focus:ring-white/80 focus:ring-offset-2 focus:ring-offset-transparent sm:right-4 sm:top-4"
               aria-label="Fechar atividade"
             >
               <svg
