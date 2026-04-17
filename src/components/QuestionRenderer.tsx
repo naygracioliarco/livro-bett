@@ -1,5 +1,4 @@
 import { Question, UserAnswers } from '../types/questions';
-import QuestionMultipleChoice from './QuestionMultipleChoice';
 import QuestionTrueFalse from './QuestionTrueFalse';
 import QuestionAlternative from './QuestionAlternative';
 import QuestionTextInput from './QuestionTextInput';

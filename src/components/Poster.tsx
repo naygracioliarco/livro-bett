@@ -1,4 +1,4 @@
-function TableOfContents() {
+function Poster() {
   return (
     <section
       className="flex h-[371px] w-full max-w-[1800px] items-center justify-center"
@@ -61,4 +61,4 @@ function TableOfContents() {
   );
 }
 
-export default TableOfContents;
+export default Poster;

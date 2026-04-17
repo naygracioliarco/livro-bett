@@ -81,7 +81,7 @@ function CriteriosAvaliacao({
                       checked={answer === option.id}
                       onChange={() => handleAnswerChange(criterio.id, option.id)}
                       className="h-4 w-4 md:h-5 md:w-5"
-                      style={{ accentColor: '#4A4A4A' }}
+                      style={{ accentColor: '#80298F' }}
                     />
                     <img
                       src={option.emoji}

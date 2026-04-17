@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TableOfContents from './TableOfContents';
+import Poster from './Poster';
 import Chapter from './Chapter';
 import TeacherButton from './TeacherButton';
 import Header from './Header';
@@ -47,7 +47,7 @@ function Book() {
         <Pagination currentPage={currentPage} />
         <div className="p-8 md:p-12">
           {/* Conteúdo do sumário */}
-          <TableOfContents />
+          <Poster />
           {/* Conteúdo do botão do professor */}
           <div className="my-6">
             <TeacherButton
