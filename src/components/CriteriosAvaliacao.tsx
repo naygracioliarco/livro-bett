@@ -1,4 +1,5 @@
 import { UserAnswers } from '../types/questions';
+import { publicUrl } from '../lib/publicUrl';
 
 interface Criterio {
   id: string;
@@ -56,7 +57,7 @@ function CriteriosAvaliacao({
         {options.map((option) => (
           <div key={option.id} className="flex flex-col items-center gap-2 text-center">
             <img
-              src={option.emoji}
+              src={publicUrl(option.emoji)}
               alt={option.label}
               className="h-10 w-10 object-contain md:h-12 md:w-12"
             />

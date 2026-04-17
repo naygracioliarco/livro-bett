@@ -1,9 +1,11 @@
+import { publicUrl } from '../lib/publicUrl';
+
 function Poster() {
   return (
     <section
       className="flex h-[371px] w-full max-w-[1800px] items-center justify-center"
       style={{
-        backgroundImage: "url('images/pattern_branco.png')",
+        backgroundImage: `url('${publicUrl('images/pattern_branco.png')}')`,
         backgroundRepeat: 'repeat',
         paddingTop: '0px!important',
         backgroundSize: 'contain',
@@ -11,7 +13,7 @@ function Poster() {
     >
       <figure className="relative h-[335px] w-[533px] shrink-0 overflow-hidden rounded-[20px]">
         <img
-          src="images/page_1_img_39_225.png"
+          src={publicUrl('images/page_1_img_39_225.png')}
           alt="O mercado de peixe nos degraus da ponte de Rialto, Veneza"
           className="block h-full w-full object-cover"
         />

@@ -22,11 +22,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const electronBuild = process.env.ELECTRON_BUILD === 'true'
+const pagesProdBase = '/livro-bett/'
+
 // https://vite.dev/config/
-// Em produção, base do GitHub Pages: https://<user>.github.io/livro-bett/
+// - GitHub Pages: base /livro-bett/
+// - Executável Electron (offline): base / (servido em localhost)
 export default defineConfig({
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' ? '/livro-bett/' : '/',
+  base:
+    electronBuild ? '/' : process.env.NODE_ENV === 'production' ? pagesProdBase : '/',
   build: {
     assetsDir: 'assets',
     outDir: 'dist',

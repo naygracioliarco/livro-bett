@@ -1,4 +1,5 @@
 import { useEffect, useId, useState, type ReactNode } from 'react';
+import { publicUrl } from '../lib/publicUrl';
 
 interface GameModalProps {
   /** Texto do botão quando não há miniatura */
@@ -43,9 +44,17 @@ function GameModal({
   const altText =
     thumbnailAlt ?? introTitle ?? 'Abrir atividade interativa';
 
+  const thumbResolved =
+    thumbnailSrc &&
+    (thumbnailSrc.startsWith('http:') || thumbnailSrc.startsWith('https:') || thumbnailSrc.startsWith('data:'))
+      ? thumbnailSrc
+      : thumbnailSrc
+        ? publicUrl(thumbnailSrc.replace(/^\//, ''))
+        : undefined;
+
   return (
     <>
-      {thumbnailSrc ? (
+      {thumbResolved ? (
         <div className="flex w-full max-w-[320px] flex-col items-center gap-3 text-center sm:max-w-[380px] md:max-w-[480px] lg:max-w-[520px]">
           {introTitle && (
             <p className="font-myriad-vf text-base font-semibold text-black md:text-lg">{introTitle}</p>
@@ -57,7 +66,7 @@ function GameModal({
             aria-label={altText}
           >
             <img
-              src={thumbnailSrc}
+              src={thumbResolved}
               alt={altText}
               className="h-auto w-full max-w-[320px] rounded-[5px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[520px]"
             />

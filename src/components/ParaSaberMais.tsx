@@ -1,8 +1,10 @@
+import { publicUrl } from '../lib/publicUrl';
+
 function ParaSaberMais() {
     return (
       <div className="flex items-center gap-3 my-6">
         <img
-          src="images/paraSaberMais.png"
+          src={publicUrl('images/paraSaberMais.png')}
           alt="Para saber mais"
           className="object-contain"
         />

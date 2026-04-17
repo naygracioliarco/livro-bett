@@ -1,8 +1,10 @@
+import { publicUrl } from '../lib/publicUrl';
+
 function OrganizandoConhecimentos() {
     return (
       <div className="flex items-center gap-3 my-6">
         <img
-          src="images/organizandoConhecimento.png"
+          src={publicUrl('images/organizandoConhecimento.png')}
           alt="Organizando os Conhecimentos"
           className="object-contain"
         />

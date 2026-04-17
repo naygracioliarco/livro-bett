@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { publicUrl } from '../lib/publicUrl';
 
 interface TeacherButtonProps {
     title?: string;
@@ -67,7 +68,7 @@ function TeacherButton({
                         alignItems: 'center',
                         justifyContent: 'center',
                         zIndex: 1,
-                        background: 'transparent url("images/iconTeacher.png") no-repeat center',
+                        background: `transparent url("${publicUrl('images/iconTeacher.svg')}") no-repeat center`,
                         backgroundSize: '100%',
                     }}
                 />

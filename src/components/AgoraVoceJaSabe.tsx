@@ -1,8 +1,10 @@
+import { publicUrl } from '../lib/publicUrl';
+
 function AgoraVoceJaSabe() {
     return (
       <div className="flex items-center gap-3 my-6">
         <img
-          src="images/agoraVoceJaSabe.png"
+          src={publicUrl('images/agoraVoceJaSabe.png')}
           alt="Agora você já sabe"
           className="object-contain"
         />

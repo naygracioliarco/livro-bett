@@ -1,3 +1,5 @@
+import { publicUrl } from '../lib/publicUrl';
+
 function Footer() {
     return (
         <footer style={{
@@ -11,7 +13,7 @@ function Footer() {
             alignItems: 'center',
             gap: '20px',
         }}>
-            <img src="images/SAELogo.png" alt="Logo" style={{ width: '115px', height: '45px' }} />
+            <img src={publicUrl('images/SAELogo.png')} alt="Logo" style={{ width: '115px', height: '45px' }} />
             <p className="font-myriad-vf" style={{
                 color: '#000',
                 textAlign: 'center',

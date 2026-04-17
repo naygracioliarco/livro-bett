@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { publicUrl } from '../lib/publicUrl';
 import Poster from './Poster';
 import Chapter from './Chapter';
 import TeacherButton from './TeacherButton';
@@ -206,7 +207,7 @@ function Book() {
                 {/* Imagem */}
                 <div className="flex flex-col items-center my-6">
                   <img
-                    src="images/page_3_img_295_487.png"
+                    src={publicUrl('images/page_3_img_295_487.png')}
                     className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[520px] h-auto rounded-[24px]"
                   />
                   <p className="text-[10px] text-slate-600 mt-2" style={{ fontSize: '10px' }}>João Prudente/Pulsar Imagens
@@ -248,7 +249,7 @@ function Book() {
                 {/* Imagem */}
                 <div className="mx-auto my-6 flex w-full max-w-[520px] flex-col items-center text-center">
                   <img
-                    src="images/page_4_img_290_484.png"
+                    src={publicUrl('images/page_4_img_290_484.png')}
                     className="h-auto w-full max-w-[320px] rounded-[24px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[520px]"
                   />
                   <p className="mt-2 text-[10px] text-slate-600" style={{ fontSize: '10px' }}>
@@ -364,7 +365,7 @@ function Book() {
                     <strong>Rota da Seda entre os anos de 1300 - 1500</strong>
                   </p>
                   <img
-                    src="images/page_6_img_70_284.png"
+                    src={publicUrl('images/page_6_img_70_284.png')}
                     className="h-auto w-full max-w-[360px] sm:max-w-[600px] md:max-w-[680px] lg:max-w-[720px]"
                   />
                   <p className="mt-2 text-[10px] text-slate-600" style={{ fontSize: '10px' }}>
@@ -431,7 +432,7 @@ function Book() {
                 <div className="mx-auto my-6 flex w-full max-w-[520px] flex-col items-center text-center">
 
                   <img
-                    src="images/page_7_img_300_309.png"
+                    src={publicUrl('images/page_7_img_300_309.png')}
                     className="h-auto w-full max-w-[320px] rounded-[24px] sm:max-w-[280px] md:max-w-[380px] lg:max-w-[420px]"
                   />
                   <p className="mt-2 text-[10px] text-slate-600" style={{ fontSize: '10px' }}>
@@ -456,7 +457,7 @@ function Book() {
                 <h3 className="atividade-digital-heading">ATIVIDADE DIGITAL</h3>
                 <div className="my-4 flex justify-center">
                   <GameModal
-                    thumbnailSrc="images/thumbODA.png"
+                    thumbnailSrc="images/thumbODA.svg"
                     introTitle="Explorando o comércio do passado"
                     introHint="Clique para jogar"
                   >
@@ -657,7 +658,7 @@ function Book() {
           className="fixed bottom-16 right-4 z-40 p-3 hover:scale-110 transition-all"
           title="Voltar ao início do livro"
         >
-          <img src="images/setaTopo.png" alt="Voltar ao início do livro" />
+          <img src={publicUrl('images/setaTopo.svg')} alt="Voltar ao início do livro" />
         </button>
       )}
     </div>

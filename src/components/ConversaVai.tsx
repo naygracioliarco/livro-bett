@@ -1,8 +1,10 @@
+import { publicUrl } from '../lib/publicUrl';
+
 function ConversaVai() {
     return (
       <div className="flex items-center gap-3 my-6">
         <img
-          src="images/conversaVai.png"
+          src={publicUrl('images/conversaVai.png')}
           alt="Conversa vai"
           className="object-contain"
         />
