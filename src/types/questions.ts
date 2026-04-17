@@ -4,6 +4,7 @@ export interface MultipleChoiceQuestion {
   id: string;
   type: 'multiple-choice';
   question: string;
+  number?: number;
   options: {
     a: string;
     b: string;

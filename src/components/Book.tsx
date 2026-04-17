@@ -21,6 +21,8 @@ import OrganizandoConhecimentos from './OrganizandoConhecimentos';
 import SaberesAcao from './SaberesAcao';
 import TestandoIdeias from './TestandoIdeias';
 import AgoraVoceJaSabe from './AgoraVoceJaSabe';
+import GameModal from './GameModal';
+import OdaSAE26_AI43_HIS_C07_OA1 from '../ODAS/SAE26_AI43_HIS_C07_OA1';
 
 // Controle de visibilidade do botão do professor
 // Altere para false para ocultar todos os botões "Para o Professor"
@@ -444,8 +446,18 @@ function Book() {
                   diversas conquistas, como a chegada ao território que
                   hoje conhecemos como Brasil. A necessidade de comércio
                   impulsionou essas expedições e levou as pessoas a se
-                  adaptarem a novos desafios.
+                  adaptarem a novos desafios. 
                 </p>
+
+                <div className="my-4 flex justify-center">
+                  <GameModal
+                    thumbnailSrc="images/thumbODA.png"
+                    introTitle="Explorando o comércio do passado"
+                    introHint="Clique para jogar"
+                  >
+                    <OdaSAE26_AI43_HIS_C07_OA1 />
+                  </GameModal>
+                </div>
 
                 <Pagination currentPage={10} />
                 {/* Conteúdo do botão do professor */}
@@ -540,7 +552,7 @@ function Book() {
                   showResults={showTeacherView}
                 />
                 <p className="mb-4 indent-6">
-                Agora, converse com os colegas do grupo e responda às questões a seguir.
+                  Agora, converse com os colegas do grupo e responda às questões a seguir.
                 </p>
                 {/* Questão intercalada no conteúdo */}
                 <QuestionRenderer
@@ -589,7 +601,7 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
-                <AgoraVoceJaSabe/>
+                <AgoraVoceJaSabe />
                 {/* Tabela de Critérios de Avaliação */}
                 <CriteriosAvaliacao
                   instanceId="producao_texto"
@@ -623,7 +635,7 @@ function Book() {
                   userAnswers={userAnswers}
                   onAnswerChange={handleAnswerChange}
                 />
-                
+
 
               </>
             }

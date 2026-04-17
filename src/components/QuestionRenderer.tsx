@@ -5,6 +5,7 @@ import QuestionTextInput from './QuestionTextInput';
 import QuestionTableFill from './QuestionTableFill';
 import QuestionFillBlanks from './QuestionFillBlanks';
 import QuestionOrdering from './QuestionOrdering';
+import QuestionMultipleChoice from './QuestionMultipleChoice';
 
 interface QuestionRendererProps {
   question?: Question;

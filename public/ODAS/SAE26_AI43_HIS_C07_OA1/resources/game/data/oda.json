@@ -1,0 +1,51 @@
+{
+    "configuracoes": {
+        "marca":"SAE",
+        "codigo": "ARCO",
+        "musica": {
+            "src": "",
+            "volume": 0.25
+        }
+    },
+    "creditos":[
+        {
+            "titulo":"CRÉDITOS DE IMAGEM",
+            "texto": "Elena/stock.adobe.com;"
+        },
+        {
+            "titulo":"CRÉDITOS DE SOM",
+            "texto": "Créditos de Som: \"Vibing Over Venus\" Kevin MacLeod CC BY 4.0 /incompetech.com; ElevenLabs/voz e efeitos sonoros gerados por Inteligência Artificial"
+        }
+    ],
+    "dialogos": [
+        "OLÁ! HOJE TEREMOS UM MOMENTO DE REFLEXÃO SOBRE O QUE DESPERTA A CURIOSIDADE E O QUE A SATISFAZ!",
+        "FAREMOS UM JOGO DE CLASSIFICAR ALGUMAS SITUAÇÕES ENTRE ESSAS DUAS CATEGORIAS.",
+        "PARA ISSO CLIQUE E ARRASTE AS FRASES ATÉ A COLUNA CORRESPONDENTE. VAMOS LÁ?"
+    ],
+    "orientacaoMetodologica": [
+        {
+            "titulo": "ORIENTAÇÃO METODOLÓGICA",
+            "texto": ""
+        }
+    ],
+    "paginas": [
+        {
+            "enunciado": {
+                "titulo": "",
+                "texto": "",
+                "codNarracao": ""
+            }
+        },
+        {
+            "enunciado": {
+                "titulo": "",
+                "texto": "",
+                "codNarracao": ""
+            },
+            "orientacaoProfessor": {
+                "titulo": "",
+                "texto": ""
+            }
+        }
+    ]
+}
