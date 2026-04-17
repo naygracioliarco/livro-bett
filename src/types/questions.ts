@@ -1,4 +1,4 @@
-export type QuestionType = 'multiple-choice' | 'true-false' | 'alternative' | 'text-input' | 'table-fill';
+export type QuestionType = 'multiple-choice' | 'true-false' | 'alternative' | 'text-input' | 'table-fill' | 'fill-blanks' | 'ordering';
 
 export interface MultipleChoiceQuestion {
   id: string;
@@ -41,6 +41,8 @@ export interface TextInputQuestion {
   id: string;
   type: 'text-input';
   question: string;
+  /** Se true, pergunta + campo ficam dentro de ul.list-disc (bullet roxo #80298F), como no livro impresso */
+  listDiscLayout?: boolean;
   placeholder?: string;
   correctAnswer?: string; // Opcional, para validação na visão do professor
   number?: number; // Número da questão (ex: 1, 2, 3...)
@@ -81,7 +83,39 @@ export interface TableFillQuestion {
   }>;
 }
 
-export type Question = MultipleChoiceQuestion | TrueFalseQuestion | AlternativeQuestion | TextInputQuestion | TableFillQuestion;
+export interface FillBlanksQuestion {
+  id: string;
+  type: 'fill-blanks';
+  number?: number;
+  question: string;
+  items: Array<{
+    letter: string; // Letra do item (ex: 'a', 'b', 'c')
+    fragments: string[]; // Texto quebrado por lacunas. Ex: ["A troca ... de ", "."]
+    placeholders?: string[]; // Placeholder por lacuna
+    correctAnswers?: string[]; // Resposta esperada por lacuna (visão do professor)
+  }>;
+}
+
+export interface OrderingQuestion {
+  id: string;
+  type: 'ordering';
+  number?: number;
+  question: string;
+  items: Array<{
+    id: string;
+    text: string;
+    correctOrder: number;
+  }>;
+}
+
+export type Question =
+  | MultipleChoiceQuestion
+  | TrueFalseQuestion
+  | AlternativeQuestion
+  | TextInputQuestion
+  | TableFillQuestion
+  | FillBlanksQuestion
+  | OrderingQuestion;
 
 export interface UserAnswers {
   [questionId: string]: string | number | boolean;

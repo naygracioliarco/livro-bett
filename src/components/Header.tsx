@@ -34,7 +34,7 @@ function Header() {
                 fontSize: '48px',
               }}
             >
-              <span style={{ color: '#FBB733' }}>7.</span> A vida no campo
+              <span style={{ color: '#FBB733' }}>7.</span> Comércio
             </h1>
 
           </div>

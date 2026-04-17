@@ -15,9 +15,9 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
             <div key={subQ.letter} className="mb-4">
               <p className="mb-2">
                 {question.number !== undefined && (
-                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+                  <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
                 )}
-                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+                <span style={{ color: '#80298F', fontWeight: 'bold' }}>{subQ.letter}) </span>
                 <span style={{ color: 'black' }}>{subQ.question}</span>
               </p>
               <ul className="question-subitems" style={{ paddingLeft: '1.5rem', listStyleType: 'disc' }}>
@@ -37,9 +37,9 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
         return (
           <p key={subQ.letter} className="mb-3">
             {question.number !== undefined && (
-              <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+              <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
             )}
-            <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+            <span style={{ color: '#80298F', fontWeight: 'bold' }}>{subQ.letter}) </span>
             <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
           </p>
         );
@@ -47,10 +47,22 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
     }
     // Se não tiver subquestões, renderiza a resposta direta
     if (question.correctAnswer) {
+      if (question.listDiscLayout) {
+        return (
+          <ul className="list-disc marker:text-[#80298F] ml-6 mb-3">
+            <li className="text-black">
+              {question.number !== undefined && (
+                <span className="font-bold text-[#80298F]">{question.number}. </span>
+              )}
+              <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
+            </li>
+          </ul>
+        );
+      }
       return (
         <p className="mb-3">
           {question.number !== undefined && (
-            <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+            <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
           )}
           <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
         </p>
@@ -69,9 +81,9 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
         return (
           <p key={stmt.letter} className="mb-3">
             {question.number !== undefined && (
-              <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+              <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
             )}
-            <span style={{ color: '#00776E', fontWeight: 'bold' }}>{stmt.letter}) </span>
+            <span style={{ color: '#80298F', fontWeight: 'bold' }}>{stmt.letter}) </span>
             <span dangerouslySetInnerHTML={{ __html: answerText }} />
           </p>
         );
@@ -82,7 +94,7 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
       return (
         <p className="mb-3">
           {question.number !== undefined && (
-            <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+            <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
           )}
           <span>{question.correctAnswer ? 'Verdadeiro' : 'Falso'}</span>
         </p>
@@ -96,9 +108,9 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
     return (
       <p className="mb-3">
         {question.number !== undefined && (
-          <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+          <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
         )}
-        <span style={{ color: '#00776E', fontWeight: 'bold' }}>{correctLetter}) </span>
+        <span style={{ color: '#80298F', fontWeight: 'bold' }}>{correctLetter}) </span>
         <span dangerouslySetInnerHTML={{ __html: correctOption || '' }} />
       </p>
     );
@@ -108,9 +120,9 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
     return (
       <p className="mb-3">
         {question.number !== undefined && (
-          <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+          <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
         )}
-        <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.correctAnswer.toUpperCase()}) </span>
+        <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.correctAnswer.toUpperCase()}) </span>
         <span>{question.options[question.correctAnswer]}</span>
       </p>
     );
@@ -124,7 +136,7 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
           <>
             <p className="mb-2 font-semibold">
               {question.number !== undefined && (
-                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+                <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
               )}
               Tabela:
             </p>
@@ -162,13 +174,59 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
             <p className="mb-2 mt-4 font-semibold">Subquestões:</p>
             {question.subQuestions.map((subQ) => (
               <p key={subQ.letter} className="mb-3">
-                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+                <span style={{ color: '#80298F', fontWeight: 'bold' }}>{subQ.letter}) </span>
                 <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
               </p>
             ))}
           </>
         )}
       </>
+    );
+  }
+
+  if (question.type === 'fill-blanks') {
+    return (
+      <div className="mb-3">
+        <p className="mb-2">
+          {question.number !== undefined && (
+            <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
+          )}
+          <span dangerouslySetInnerHTML={{ __html: question.question }} />
+        </p>
+        <ul className="list-none ml-0 space-y-2">
+          {question.items.map((item) => (
+            <li key={item.letter}>
+              <span style={{ color: '#80298F', fontWeight: 'bold' }}>{item.letter}) </span>
+              {item.correctAnswers?.length ? (
+                <span>{item.correctAnswers.join(' | ')}</span>
+              ) : (
+                <span>Sem resposta esperada cadastrada.</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  if (question.type === 'ordering') {
+    return (
+      <div className="mb-3">
+        <p className="mb-2">
+          {question.number !== undefined && (
+            <span style={{ color: '#80298F', fontWeight: 'bold' }}>{question.number}. </span>
+          )}
+          <span dangerouslySetInnerHTML={{ __html: question.question }} />
+        </p>
+        <ul className="list-none ml-8 space-y-2">
+          {question.items.map((item) => (
+            <li key={item.id}>
+              <span style={{ color: '#80298F', fontWeight: 'bold' }}>{item.correctOrder}. </span>
+              <span>{item.text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 

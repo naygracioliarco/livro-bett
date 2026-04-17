@@ -51,8 +51,10 @@
 
 
 .chapter-content h3 {
-
-  color: #80298F;
+  border-left: 6px solid #80298F;
+  padding-left: 14px;
+  margin-bottom: 24px;
+  color: #000;
 
   font-family: 'Myriad VF', sans-serif;
 

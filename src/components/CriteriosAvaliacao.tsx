@@ -11,17 +11,17 @@ interface CriteriosAvaliacaoProps {
   instanceId: string; // ID único para esta instância da tabela
   criterios: Criterio[];
   userAnswers?: UserAnswers;
-  onAnswerChange?: (criterioId: string, answer: boolean) => void;
+  onAnswerChange?: (criterioId: string, answer: boolean | string) => void;
 }
 
 function CriteriosAvaliacao({
-  title = 'CRITÉRIOS DE AVALIAÇÃO',
+  title = '',
   instanceId,
   criterios,
   userAnswers = {},
   onAnswerChange,
 }: CriteriosAvaliacaoProps) {
-  const handleAnswerChange = (criterioId: string, answer: boolean) => {
+  const handleAnswerChange = (criterioId: string, answer: string) => {
     if (onAnswerChange) {
       // Usa instanceId como prefixo para tornar o ID único
       const uniqueId = `${instanceId}_${criterioId}`;
@@ -29,135 +29,75 @@ function CriteriosAvaliacao({
     }
   };
 
-  return (
-    <div className="my-6 overflow-x-auto -mx-4 md:mx-0">
-      <div className="min-w-full inline-block">
-        <table
-          className="w-full border-collapse"
-          style={{
-            border: '3px solid #0E3B5D',
-            fontFamily: 'myriad-vf, sans-serif',
-            minWidth: '100%',
-          }}
-        >
-          <thead>
-            <tr>
-              <th
-              colSpan={2}
-                className="p-2 md:p-3 text-left"
-                style={{
-                  border: '3px solid #0E3B5D',
-                  backgroundColor: 'white',
-                  textAlign: 'center',
-                }}
-              ><h3
-              className="mb-2 md:mb-4 font-bold text-sm md:text-base"
-              style={{
-                color: '#BF3154',
-              }}
-            >
-              {title}
-            </h3></th>
-              
-              <th
-                className="p-2 md:p-3 text-center"
-                style={{
-                  border: '3px solid #0E3B5D',
-                  backgroundColor: 'white',
-                }}
-              >
-                <span className="text-base md:text-2xl"><img src="images/iconeFeliz.png" alt="Sim" className="w-4 h-4 md:w-14 md:h-10" /></span>
-              </th>
-              <th
-                className="p-2 md:p-3 text-center"
-                style={{
-                  border: '3px solid #0E3B5D',
-                  backgroundColor: 'white',
-                }}
-              >
-                <span className="text-base md:text-2xl"><img src="images/iconeTriste.png" alt="Não" className="w-4 h-4 md:w-14 md:h-10" /></span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {criterios.map((criterio) => {
-              // Usa instanceId como prefixo para tornar o ID único
-              const uniqueId = `${instanceId}_${criterio.id}`;
-              const answer = userAnswers[uniqueId] as boolean | undefined;
-              const isYes = answer === true;
-              const isNo = answer === false;
+  const options = [
+    {
+      id: 'ja-sei',
+      label: 'JÁ SEI',
+      emoji: 'images/page_10_img_102_472.png',
+    },
+    {
+      id: 'preciso-saber-mais',
+      label: 'PRECISO SABER MAIS',
+      emoji: 'images/page_10_img_189_472.png',
+    },
+    {
+      id: 'ainda-nao-sei',
+      label: 'AINDA NÃO SEI',
+      emoji: 'images/page_10_img_358_472.png',
+    },
+  ] as const;
 
-              return (
-                <tr key={criterio.id}>
-                  <td
-                    className="p-2 md:p-3 font-semibold text-sm md:text-base text-center"
-                    style={{
-                      border: '3px solid #0E3B5D',
-                      color: '#0E3B5D',
-                      backgroundColor: 'white',
-                      fontFamily: 'myriad-vf, sans-serif',
-                      fontSize: '16px',
-                      whiteSpace: 'normal',
-                      wordBreak: 'break-word',
-                      textAlign: 'center',
-                    }}
-                  >
-                    {criterio.nome}
-                  </td>
-                  <td
-                    className="p-2 md:p-3 text-xs md:text-base"
-                    style={{
-                      border: '3px solid #0E3B5D',
-                      color: '#0E3B5D',
-                      backgroundColor: 'white',
-                      fontFamily: 'Ubuntu, sans-serif',
-                      whiteSpace: 'normal',
-                      wordBreak: 'break-word',
-                    }}
-                  >
-                    {criterio.pergunta}
-                  </td>
-                  <td
-                    className="p-2 md:p-3 text-center"
-                    style={{
-                      border: '3px solid #0E3B5D',
-                      backgroundColor: 'white',
-                    }}
-                  >
+  return (
+    <div className="my-8">
+      <h3 className="mb-6 text-center text-base font-bold text-[#BF3154] md:text-lg">{title}</h3>
+
+      <div className="mb-8 grid grid-cols-[auto_1fr_1fr_1fr] items-start gap-4 md:gap-6">
+        <div />
+        {options.map((option) => (
+          <div key={option.id} className="flex flex-col items-center gap-2 text-center">
+            <img
+              src={option.emoji}
+              alt={option.label}
+              className="h-10 w-10 object-contain md:h-12 md:w-12"
+            />
+            <p className="text-xs tracking-wide text-black md:text-sm">{option.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="space-y-8">
+        {criterios.map((criterio) => {
+          const uniqueId = `${instanceId}_${criterio.id}`;
+          const answer = userAnswers[uniqueId] as string | boolean | undefined;
+
+          return (
+            <div key={criterio.id} className="grid grid-cols-[auto_1fr] items-center gap-4 md:gap-6">
+              <div className="grid grid-cols-3 gap-3 md:gap-5">
+                {options.map((option) => (
+                  <label key={option.id} className="flex items-center justify-center gap-2">
                     <input
                       type="radio"
                       name={uniqueId}
-                      checked={isYes}
-                      onChange={() => handleAnswerChange(criterio.id, true)}
-                      className="w-3 h-3 md:w-4 md:h-4"
-                      style={{
-                        accentColor: '#BF3154',
-                      }}
+                      checked={answer === option.id}
+                      onChange={() => handleAnswerChange(criterio.id, option.id)}
+                      className="h-4 w-4 md:h-5 md:w-5"
+                      style={{ accentColor: '#4A4A4A' }}
                     />
-                  </td>
-                  <td
-                    className="p-2 md:p-3 text-center"
-                    style={{
-                      border: '3px solid #0E3B5D',
-                      backgroundColor: 'white',
-                    }}
-                  >
-                    <input
-                      type="radio"
-                      name={uniqueId}
-                      checked={isNo}
-                      onChange={() => handleAnswerChange(criterio.id, false)}
-                      className="w-3 h-3 md:w-4 md:h-4"
-                      style={{
-                        accentColor: '#BF3154',
-                      }}
+                    <img
+                      src={option.emoji}
+                      alt={option.label}
+                      className="h-8 w-8 object-contain md:h-10 md:w-10"
                     />
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                  </label>
+                ))}
+              </div>
+
+              <p className="text-center text-[24px] leading-[1.35] text-black md:text-[40px]">
+                {criterio.pergunta}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

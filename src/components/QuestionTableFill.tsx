@@ -35,6 +35,8 @@ function QuestionTableFill({
   onAnswerChange,
   showResults = false,
 }: QuestionTableFillProps) {
+  const hasLabelColumn = rows.some((row) => Object.prototype.hasOwnProperty.call(row, 'paragraph'));
+
   return (
     <div className="mb-6">
       {title && (
@@ -50,7 +52,7 @@ function QuestionTableFill({
           <table
             className="w-full border-collapse"
             style={{
-              border: '3px solid #0E3B5D',
+              border: '3px solid #80298F',
               minWidth: '100%',
             }}
           >
@@ -61,9 +63,9 @@ function QuestionTableFill({
                     key={index}
                     className={`p-2 md:p-3 font-semibold text-xs md:text-base ${index === 0 ? 'text-center' : 'text-center'}`}
                     style={{
-                      border: '1px solid #0E3B5D',
-                      backgroundColor: 'white',
-                      color: '#0E3B5D',
+                      border: '1px solid #80298F',
+                      backgroundColor: '#F9DDFF',
+                      color: '#000000',
                       fontFamily: 'Ubuntu, sans-serif',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',
@@ -77,58 +79,60 @@ function QuestionTableFill({
             </thead>
             <tbody>
               {rows.map((row) => {
-                // Obtém o primeiro campo da row (primeira coluna) - pode ser 'paragraph' ou qualquer outro nome
-                const firstColumnKey = Object.keys(row).find(key => key !== 'id') || 'paragraph';
-                const firstColumnValue = row[firstColumnKey] || '';
+                // Mantém a ordem dos campos text1, text2, text3... quando existirem
+                const dataFieldKeys = Object.keys(row)
+                  .filter((key) => key !== 'id' && key !== 'paragraph')
+                  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
                 
                 return (
                   <tr key={row.id}>
-                    <td
-                      className="p-2 md:p-3 font-semibold text-xs md:text-base text-center"
-                      style={{
-                        border: '1px solid #0E3B5D',
-                        backgroundColor: 'white',
-                        color: '#0E3B5D',
-                        fontFamily: 'Ubuntu, sans-serif',
-                        whiteSpace: 'normal',
-                        wordBreak: 'break-word',
-                        textAlign: 'center',
-                      }}
-                    >
-                      {firstColumnValue}
-                    </td>
-                    {columns.slice(1).map((_, colIndex) => {
-                      const fieldId = `${questionId}_${row.id}_col${colIndex + 1}`;
-                      // Acessa os campos dinamicamente: text1, text2, etc. ou qualquer outro nome
-                      const fieldKeys = Object.keys(row).filter(key => key !== 'id' && key !== firstColumnKey);
-                      const fieldValue = fieldKeys[colIndex] ? row[fieldKeys[colIndex]] : '';
-                      const userAnswer = (userAnswers[fieldId] as string) || fieldValue || '';
+                    {hasLabelColumn && (
+                      <td
+                        className="p-2 md:p-3 font-semibold text-xs md:text-base text-center"
+                        style={{
+                          border: '1px solid #80298F',
+                          backgroundColor: '#F9DDFF',
+                          color: '#000000',
+                          fontFamily: 'Ubuntu, sans-serif',
+                          whiteSpace: 'normal',
+                          wordBreak: 'break-word',
+                          textAlign: 'center',
+                        }}
+                      >
+                        {row.paragraph || ''}
+                      </td>
+                    )}
+                    {columns
+                      .slice(hasLabelColumn ? 1 : 0)
+                      .map((_, colIndex) => {
+                        const fieldId = `${questionId}_${row.id}_col${colIndex + 1}`;
+                        const fieldValue = dataFieldKeys[colIndex] ? row[dataFieldKeys[colIndex]] : '';
+                        const userAnswer = (userAnswers[fieldId] as string) || fieldValue || '';
                       
-                      return (
-                        <td
-                          key={colIndex}
-                          className="p-2 md:p-3"
-                          style={{
-                            border: '1px solid #0E3B5D',
-                            backgroundColor: 'white',
-                          }}
-                        >
-                          <textarea
-                            value={userAnswer}
-                            onChange={(e) => onAnswerChange(questionId, fieldId, e.target.value)}
-                            placeholder="Digite aqui..."
-                            disabled={showResults}
-                            className="w-full p-1 md:p-2 border-0 rounded focus:outline-none resize-y min-h-[50px] md:min-h-[60px] text-xs md:text-base"
+                        return (
+                          <td
+                            key={colIndex}
+                            className="p-2 md:p-3"
                             style={{
-                              fontFamily: 'Ubuntu, sans-serif',
-                              color: '#0E3B5D',
-                              backgroundColor: 'transparent',
-                              border: 'none',
+                              border: '1px solid #80298F',
+                              backgroundColor: 'white',
                             }}
-                          />
-                        </td>
-                      );
-                    })}
+                          >
+                            <textarea
+                              value={userAnswer}
+                              onChange={(e) => onAnswerChange(questionId, fieldId, e.target.value)}
+                              placeholder="Digite aqui..."
+                              disabled={showResults}
+                              className="mt-2 block h-[31px] w-full max-w-full rounded-[5px] bg-[rgba(221,221,221,0.50)] px-3 pt-1 text-left text-[14px] font-normal leading-normal text-[#000000] placeholder:text-[#BDBDBD] font-myriad-vf focus:outline-none resize-none"
+                              style={{
+                                fontFamily: 'myriad-vf, sans-serif',
+                                color: '#000000',
+                                border: 'none',
+                              }}
+                            />
+                          </td>
+                        );
+                      })}
                   </tr>
                 );
               })}

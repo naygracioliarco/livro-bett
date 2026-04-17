@@ -106,7 +106,38 @@ function QuestionTextInput({
     );
   }
 
+  const simpleTextareaClass =
+    'mt-2 block h-[31px] w-[765px] max-w-full rounded-[5px] bg-[rgba(221,221,221,0.50)] px-3 pt-1 text-left text-[14px] font-normal leading-normal text-[#000000] placeholder:text-[#BDBDBD] font-myriad-vf focus:outline-none resize-none';
+
   // Formato simples (sem subquestões)
+  if (question.listDiscLayout) {
+    return (
+      <div className="mb-6 rounded-lg">
+        <ul className="list-disc marker:text-[#80298F] ml-6">
+          <li className="text-black">
+            {question.number !== undefined && (
+              <span className="font-bold text-[#80298F]">{question.number}. </span>
+            )}
+            <span dangerouslySetInnerHTML={{ __html: question.question }} />
+            <textarea
+              value={userAnswer}
+              onChange={(e) => onAnswerChange(question.id, e.target.value)}
+              placeholder={question.placeholder || 'Digite aqui...'}
+              disabled={showResults}
+              className={simpleTextareaClass}
+            />
+            {showResults && question.correctAnswer && (
+              <div className="mt-3 p-3 bg-gray-100 rounded">
+                <p className="text-sm font-semibold text-gray-700 mb-1">Resposta esperada:</p>
+                <p className="text-sm text-gray-600 whitespace-pre-wrap">{question.correctAnswer}</p>
+              </div>
+            )}
+          </li>
+        </ul>
+      </div>
+    );
+  }
+
   return (
     <div className="mb-6 rounded-lg">
       <p className="mb-4">
@@ -120,7 +151,7 @@ function QuestionTextInput({
         onChange={(e) => onAnswerChange(question.id, e.target.value)}
         placeholder={question.placeholder || 'Digite aqui...'}
         disabled={showResults}
-        className="h-[31px] w-[765px] max-w-full rounded-[5px] bg-[rgba(221,221,221,0.50)] px-3 pt-1 text-left text-[14px] font-normal leading-normal text-[#BDBDBD] placeholder:text-[#BDBDBD] font-myriad-vf focus:outline-none resize-none"
+        className="h-[31px] w-[765px] max-w-full rounded-[5px] bg-[rgba(221,221,221,0.50)] px-3 pt-1 text-left text-[14px] font-normal leading-normal text-[#000000] placeholder:text-[#BDBDBD] font-myriad-vf focus:outline-none resize-none"
       />
       {showResults && question.correctAnswer && (
         <div className="mt-3 p-3 bg-gray-100 rounded">

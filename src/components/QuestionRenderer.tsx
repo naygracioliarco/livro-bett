@@ -4,6 +4,8 @@ import QuestionTrueFalse from './QuestionTrueFalse';
 import QuestionAlternative from './QuestionAlternative';
 import QuestionTextInput from './QuestionTextInput';
 import QuestionTableFill from './QuestionTableFill';
+import QuestionFillBlanks from './QuestionFillBlanks';
+import QuestionOrdering from './QuestionOrdering';
 
 interface QuestionRendererProps {
   question?: Question;
@@ -70,6 +72,24 @@ function QuestionRenderer({
           subQuestions={question.subQuestions}
           userAnswers={userAnswers}
           onAnswerChange={(_questionId, fieldId, answer) => onAnswerChange(fieldId, answer)}
+          showResults={showResults}
+        />
+      );
+    case 'fill-blanks':
+      return (
+        <QuestionFillBlanks
+          question={question}
+          userAnswers={userAnswers}
+          onAnswerChange={onAnswerChange}
+          showResults={showResults}
+        />
+      );
+    case 'ordering':
+      return (
+        <QuestionOrdering
+          question={question}
+          userAnswers={userAnswers}
+          onAnswerChange={onAnswerChange}
           showResults={showResults}
         />
       );
