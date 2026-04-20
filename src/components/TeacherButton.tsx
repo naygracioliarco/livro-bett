@@ -85,17 +85,18 @@ function TeacherButton({
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="flex justify-between items-center mb-6">
-                            <h3 
+                            <p 
                                 className="text-2xl font-bold"
                                 style={{ 
                                     color: '#80298F',
                                     fontFamily: "'myriad-vf', sans-serif",
                                     fontSize: '26px',
-                                    lineHeight: 'normal'
+                                    lineHeight: 'normal',
+                                    fontWeight: 700,
                                 }}
                             >
                                 PARA O PROFESSOR
-                            </h3>
+                            </p>
                             <button
                                 onClick={() => setIsOpen(false)}
                                 className="text-slate-500 hover:text-slate-700 text-2xl font-bold"

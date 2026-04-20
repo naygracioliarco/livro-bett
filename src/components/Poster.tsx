@@ -3,7 +3,7 @@ import { publicUrl } from '../lib/publicUrl';
 function Poster() {
   return (
     <section
-      className="flex h-[371px] w-full max-w-[1800px] items-center justify-center"
+      className="flex w-full items-center justify-center px-3 py-4 sm:px-4 sm:py-5 md:h-[371px] md:px-0 md:py-0"
       style={{
         backgroundImage: `url('${publicUrl('images/pattern_branco.png')}')`,
         backgroundRepeat: 'repeat',
@@ -11,7 +11,7 @@ function Poster() {
         backgroundSize: 'contain',
       }}
     >
-      <figure className="relative h-[335px] w-[533px] shrink-0 overflow-hidden rounded-[20px]">
+      <figure className="relative aspect-[533/335] w-full max-w-[533px] overflow-hidden rounded-[20px]">
         <img
           src={publicUrl('images/page_1_img_39_225.png')}
           alt="O mercado de peixe nos degraus da ponte de Rialto, Veneza"
@@ -45,12 +45,8 @@ function Poster() {
               fontWeight: 400,
               lineHeight: 'normal',
               width: '497px',
-              height: '36px',
               maxWidth: '100%',
               margin: '8px auto 0',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
             }}
           >
             FOSTER, Myles Birket. O mercado de peixe nos degraus da ponte de

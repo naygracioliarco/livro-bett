@@ -100,7 +100,7 @@ function GameModal({
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="relative z-[61] flex h-[75vh] w-[75vw] min-h-0 min-w-0 max-h-[min(90dvh,90svh)] max-w-[min(90vw,75vw)] flex-col overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-white/15"
+            className="relative z-[61] flex h-[75dvh] w-[95vw] min-h-0 min-w-0 max-h-[90dvh] max-w-[1100px] flex-col overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-white/15 sm:h-[75vh] sm:w-[75vw]"
           >
             <span id={titleId} className="sr-only">
               Atividade interativa
@@ -124,7 +124,7 @@ function GameModal({
                 />
               </svg>
             </button>
-            <div className="flex min-h-0 flex-1 flex-col overflow-hidden [&_iframe]:h-full [&_iframe]:min-h-0 [&_iframe]:max-h-none [&_iframe]:rounded-none">
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden [&_iframe]:h-full [&_iframe]:min-h-0 [&_iframe]:w-full [&_iframe]:max-w-full [&_iframe]:max-h-none [&_iframe]:rounded-none">
               {children}
             </div>
           </div>

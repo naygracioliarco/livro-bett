@@ -52,7 +52,7 @@
     "productName": "Livro Digital BETT",
     "copyright": "Copyright 2026",
     "directories": {
-      "output": "release"
+      "output": "release-portable"
     },
     "files": [
       "dist/**/*",
