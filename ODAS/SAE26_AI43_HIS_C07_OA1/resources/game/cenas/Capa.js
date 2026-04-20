@@ -11,33 +11,23 @@ export class Capa extends BaseCena {
     }
 
     create() {
-        const background = this.add.image(0, 0, 'bgCapa').setOrigin(0, 0);
-        const titulo = this.add.image(0, 0, 'titulo').setOrigin(0, 0);
-        titulo.x = background.x + (background.width - titulo.width) / 2;
-        titulo.y = 288;
-
-
-        // Obter a marca atual
+        const background = this.add.image(0, 0, 'introCapa').setOrigin(0, 0);
         const marca = ColorManager.getCurrentMarca(this);
-        
-        // Pegando a cor da marca
-        const colors = ColorManager.getColors(marca, ColorManager.YELLOW);
+        const colors = ColorManager.getColors(marca, ColorManager.BLUE);
 
         const btIniciar = new Button(this, {
-           text: 'JOGAR',
+           text: 'INICIAR',
            showIcon: true,
            colors: colors
         });
 
         btIniciar.x = background.x + (background.width - btIniciar.width) / 2;
-        btIniciar.y = 802;
+        btIniciar.y = 782;
 
         btIniciar.on('buttonClick', () => {
            this.controladorDeCenas.proximaCena();
         });
 
         super.create();
-
-
     }
 }

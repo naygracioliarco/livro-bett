@@ -1,31 +1,26 @@
 {
     "configuracoes": {
-        "marca":"SAE",
+        "marca": "SAE",
         "codigo": "ARCO",
         "musica": {
-            "src": "",
+            "src": "Lotus.mp3",
             "volume": 0.25
         }
     },
-    "creditos":[
+    "creditos": [
         {
-            "titulo":"CRÉDITOS DE IMAGEM",
-            "texto": "Elena/stock.adobe.com;"
+            "titulo": "Créditos de Imagem",
+            "texto": "MaryDesy/stock.adobe.com; \nImagem gerada por IA/OpenAI; Mariana Fontoura."
         },
         {
-            "titulo":"CRÉDITOS DE SOM",
-            "texto": "Créditos de Som: \"Vibing Over Venus\" Kevin MacLeod CC BY 4.0 /incompetech.com; ElevenLabs/voz e efeitos sonoros gerados por Inteligência Artificial"
+            "titulo": "Créditos de SOM",
+            "texto": "Misterbates - Meditate with Kwolok / CC0 freesound.org; \nElevenLabs/voz e efeitos sonoros gerados por Inteligência Artificial"
         }
-    ],
-    "dialogos": [
-        "OLÁ! HOJE TEREMOS UM MOMENTO DE REFLEXÃO SOBRE O QUE DESPERTA A CURIOSIDADE E O QUE A SATISFAZ!",
-        "FAREMOS UM JOGO DE CLASSIFICAR ALGUMAS SITUAÇÕES ENTRE ESSAS DUAS CATEGORIAS.",
-        "PARA ISSO CLIQUE E ARRASTE AS FRASES ATÉ A COLUNA CORRESPONDENTE. VAMOS LÁ?"
     ],
     "orientacaoMetodologica": [
         {
             "titulo": "ORIENTAÇÃO METODOLÓGICA",
-            "texto": ""
+            "texto": "O ODA pode ser utilizado como uma atividade de imersão histórica, na etapa introdutória ou de consolidação do conteúdo sobre o surgimento do comércio e as formas antigas de troca. \nIncentiva a tomada de decisão com base em contexto histórico e promove a reflexão crítica por meio de comparação entre práticas comerciais antigas e atuais. Pode ser realizada em sala, com apoio do professor para mediação das decisões e discussão posterior."
         }
     ],
     "paginas": [
