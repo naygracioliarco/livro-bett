@@ -17,6 +17,7 @@ import { useScrollPosition } from '../hooks/useScrollPosition';
 import { TeacherAnswers } from './TeacherAnswers';
 import ConversaVai from './ConversaVai';
 import ConversaVem from './ConversaVem';
+import EscolaDigital from './EscolaDigital';
 import ParaSaberMais from './ParaSaberMais';
 import OrganizandoConhecimentos from './OrganizandoConhecimentos';
 import SaberesAcao from './SaberesAcao';
@@ -55,7 +56,7 @@ function Book() {
         {/* Conteúdo das imagens da capa */}
         <Poster />
         <div className="p-8 md:p-12">
-          
+          <EscolaDigital />
           {/* Conteúdo do botão do professor */}
           <div className="my-6">
             <TeacherButton
@@ -452,7 +453,7 @@ function Book() {
                   diversas conquistas, como a chegada ao território que
                   hoje conhecemos como Brasil. A necessidade de comércio
                   impulsionou essas expedições e levou as pessoas a se
-                  adaptarem a novos desafios. 
+                  adaptarem a novos desafios.
                 </p>
                 <h3 className="atividade-digital-heading">ATIVIDADE DIGITAL</h3>
                 <div className="my-4 flex justify-center">
